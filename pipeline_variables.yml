@@ -1,12 +1,12 @@
 variables:
   branch_name: $[replace(variables['Build.SourceBranch'], 'refs/heads/','')]
-  is_master: $[eq(variables['branch_name'], 'main')]
+  is_master: $[eq(variables['branch_name'], 'master')]
   is_release: $[contains(variables['branch_name'], 'release')]
   build_number: $(major).$(minor).0
   patch: $[counter(variables['minor'], 0)]
-  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
     build_version: $(build_number).$(patch)
   ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
     build_version: $(build_number).$[counter(variables['system.pullrequest.pullrequestid'], 0)]
-  ${{ if and( ne(variables['Build.SourceBranch'], 'refs/heads/main'), not(contains(variables['Build.Reason'], 'PullRequest'))) }}:
+  ${{ if and( ne(variables['Build.SourceBranch'], 'refs/heads/master'), not(contains(variables['Build.Reason'], 'PullRequest'))) }}:
     build_version: $(build_number).$(build.BuildId)
