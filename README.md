@@ -1,20 +1,36 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+[![Build Status](https://ponoorak.visualstudio.com/Nasa/_apis/build/status/TwoLineElements?branchName=master)](https://ponoorak.visualstudio.com/Nasa/_build/latest?definitionId=23&branchName=master)
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+# Instalation Tle parser
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+```
+Install-Package TwoLineElements
+```
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+# Ussage Tle parser
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+```
+var lines = "STARLINK-24\n" +
+                       	"1 44238U 19029D   20182.10581531  .00001387  00000-0  94194-4 0  9999\n" +
+                        "2 44238  52.9975 151.8469 0000937  68.7807 291.3284 15.13099176 60950";
+
+TwoLineElementsModel result = TwoLineElements.Parse(lines);
+```
+Or
+```
+line0 = "STARLINK-24
+string result = TleLine0Parser.Parse(line0)
+```
+Or
+```
+line1 = "1 25544U 98067A   08264.51782528 -.00002182  00000-0 -11606-4 0  2927";
+Line1Model result = TleLine1Parser.Parse(line1)
+```
+Or
+```
+line2 = "2 25544  51.6416 247.4627 0006703 130.5360 325.0288 15.72125391563537";
+Line2Model result = TleLine2Parser.Parse(line2)
+```
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
