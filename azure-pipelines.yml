@@ -34,6 +34,8 @@ variables:
   value: 1
 
 stages:
+- checkout: self
+  submodules: true
 - template: ./buildTools/pipeline_nuget.yml
   parameters:
    push_nuget: ${{ parameters.push_nuget }}
