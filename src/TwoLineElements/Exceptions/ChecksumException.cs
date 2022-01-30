@@ -7,7 +7,7 @@
 #pragma warning restore RCS1194 // Implement exception constructors.
     {
         public ChecksumException(int expected, int actual)
-        :base($"Invalid checksum expected {expected} but get {actual}")
+            : base($"Invalid checksum expected {expected} but get {actual}")
         {
             Expected = expected;
             Actual = actual;

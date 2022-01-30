@@ -9,7 +9,7 @@
     public static class TleLine0Parser
     {
         /// <summary>
-        /// Parse line 0 TLE
+        ///     Parse line 0 TLE
         /// </summary>
         /// <param name="line0">line length less than 24</param>
         /// <returns>Satellite name</returns>
@@ -19,7 +19,7 @@
         {
             if (string.IsNullOrEmpty(line0))
             {
-                throw new ArgumentNullException(nameof(line0),@"line0 can't be empty");
+                throw new ArgumentNullException(nameof(line0), @"line0 can't be empty");
             }
 
             if (line0.Length > 24)

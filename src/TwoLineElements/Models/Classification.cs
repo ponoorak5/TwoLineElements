@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TwoLineElements.Models
+﻿namespace TwoLineElements.Models
 {
     /// <summary>
     ///     Classification (U=Unclassified, C=Classified, S=Secret)
@@ -10,15 +6,17 @@ namespace TwoLineElements.Models
     public enum Classification
     {
         /// <summary>
-        /// Unclassified satellite
+        ///     Unclassified satellite
         /// </summary>
         Unclassified = 'U',
+
         /// <summary>
-        /// Classified satellite
+        ///     Classified satellite
         /// </summary>
         Classified = 'C',
+
         /// <summary>
-        /// Secret satellite
+        ///     Secret satellite
         /// </summary>
         Secret = 'S'
     }

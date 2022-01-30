@@ -25,7 +25,7 @@
         {
             if (from < 1)
             {
-                throw new ArgumentOutOfRangeException(nameof(@from));
+                throw new ArgumentOutOfRangeException(nameof(from));
             }
 
             return value.Substring(from - 1, to - from + 1);

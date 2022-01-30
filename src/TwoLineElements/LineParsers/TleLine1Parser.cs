@@ -8,10 +8,12 @@
     public static class TleLine1Parser
     {
         /// <summary>
-        /// Parse first line TLE
+        ///     Parse first line TLE
         /// </summary>
         /// <param name="line1"></param>
-        /// <returns><see cref="Line1Model"/></returns>
+        /// <returns>
+        ///     <see cref="Line1Model" />
+        /// </returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static Line1Model Parse(string line1)

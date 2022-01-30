@@ -7,10 +7,12 @@
     public static class TleLine2Parser
     {
         /// <summary>
-        /// Parse second line of TLE
+        ///     Parse second line of TLE
         /// </summary>
         /// <param name="line2"></param>
-        /// <returns><see cref="Line2Model"/></returns>
+        /// <returns>
+        ///     <see cref="Line2Model" />
+        /// </returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static Line2Model Parse(string line2)
