@@ -10,6 +10,12 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+resources:
+  repositories:
+  - repository: buildTools
+    name: buildTools
+    endpoint: https://ponoorak.visualstudio.com/Optra2.0/_git/buildTools
+
 parameters:
 - name: push_nuget
   displayName: Push to nuget.org
@@ -34,8 +40,6 @@ variables:
   value: 1
 
 stages:
-- checkout: self
-  submodules: true
-- template: ./buildTools/pipeline_nuget.yml
+- template: pipeline_nuget.yml@buildTools
   parameters:
    push_nuget: ${{ parameters.push_nuget }}
