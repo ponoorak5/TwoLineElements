@@ -26,12 +26,14 @@ variables:
   value: 'Release'
 - name: tests
   value: '**/*Tests.csproj'
+- name: vstsFeed
+  value 'Nasa/Nasa_feed'
 - name: major
   value: 2
 - name: minor
   value: 1
 
 stages:
-- template: ./pipeline_nuget.yml
+- template: ./buildTools/pipeline_nuget.yml
   parameters:
    push_nuget: ${{ parameters.push_nuget }}
