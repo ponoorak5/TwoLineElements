@@ -15,6 +15,7 @@ resources:
   - repository: Optra2.0/buildTools
     type: git
     name: buildTools
+    endpoint: buildTools
 
 parameters:
 - name: push_nuget
