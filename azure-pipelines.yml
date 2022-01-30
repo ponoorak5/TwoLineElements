@@ -40,6 +40,8 @@ variables:
   value: 2
 - name: minor
   value: 1
+- name: build
+  value: 0
 
 stages:
 - template: pipeline_nuget.yml@buildTools

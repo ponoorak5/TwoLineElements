@@ -7,7 +7,7 @@
     using Models;
     using Properties;
 
-    public class TwoLineElements
+    public static class TwoLineElements
     {
         public static TwoLineElementsModel Parse(string lines)
         {
@@ -40,8 +40,6 @@
             }
 
             var tle = new TwoLineElementsModel();
-
-
             if (lines.Count > Convert.ToInt32(Resources.TLE_MIN_LINE_COUNT))
             {
                 tle.Name = TleLine0Parser.Parse(lines.Dequeue());

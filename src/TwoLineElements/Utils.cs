@@ -4,8 +4,9 @@
     using System.Globalization;
     using System.Text.RegularExpressions;
     using Exceptions;
+    using Extensions;
 
-    public static class Utils
+    internal static class Utils
     {
         /// <summary>
         ///     Checksum Calculate according https://en.wikipedia.org/wiki/Two-line_element_set
@@ -85,10 +86,10 @@
             var minute = (int) Math.Floor(minutes);
             var seconds = 60 * (minutes - minute);
             var second = (int) Math.Floor(seconds);
-            var miliSeconds = 1000 * (seconds - second);
+            var millSeconds = 1000 * (seconds - second);
 
             var date = new DateTime(year, 1, 1, hour, minute, second) + TimeSpan.FromDays(day) +
-                       TimeSpan.FromMilliseconds(miliSeconds);
+                       TimeSpan.FromMilliseconds(millSeconds);
             return DateTime.SpecifyKind(date.AddDays(-1), DateTimeKind.Utc);
         }
     }

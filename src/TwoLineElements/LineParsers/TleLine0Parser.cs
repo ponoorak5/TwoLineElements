@@ -8,6 +8,13 @@
     /// </summary>
     public static class TleLine0Parser
     {
+        /// <summary>
+        /// Parse line 0 TLE
+        /// </summary>
+        /// <param name="line0">line length less than 24</param>
+        /// <returns>Satellite name</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static string Parse(string line0)
         {
             if (string.IsNullOrEmpty(line0))

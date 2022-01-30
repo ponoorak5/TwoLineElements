@@ -81,7 +81,8 @@ namespace TwoLineElements.Tests
         [Fact]
         public void ParseInvalidQueue()
         {
-
+            Queue<string> lines = null;
+            Assert.Throws<ArgumentNullException>(() => TwoLineElements.Parse(lines))''
         }
     }
 }

@@ -1,9 +1,18 @@
 ﻿namespace TwoLineElements.LineParsers
 {
     using System;
+    using Extensions;
+    using Models;
 
     public static class TleLine2Parser
     {
+        /// <summary>
+        /// Parse second line of TLE
+        /// </summary>
+        /// <param name="line2"></param>
+        /// <returns><see cref="Line2Model"/></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static Line2Model Parse(string line2)
         {
             if (string.IsNullOrEmpty(line2))
@@ -33,19 +42,6 @@
             };
 
             return result;
-        }
-
-        public class Line2Model
-        {
-            public int Line { get; set; }
-            public double Number { get; set; }
-            public double Inclination { get; set; }
-            public double Ascension { get; set; }
-            public double Eccentricity { get; set; }
-            public double Perigee { get; set; }
-            public double Anomaly { get; set; }
-            public double Motion { get; set; }
-            public double Revolution { get; set; }
         }
     }
 }

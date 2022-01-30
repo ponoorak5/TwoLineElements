@@ -2,20 +2,18 @@
 {
     using System;
     using System.Linq;
+    using Extensions;
+    using Models;
 
     public static class TleLine1Parser
     {
         /// <summary>
-        ///     Classification (U=Unclassified, C=Classified, S=Secret)
+        /// Parse first line TLE
         /// </summary>
-        public enum Classification
-        {
-            Unclassified = 'U',
-            Classified = 'C',
-            Secret = 'S'
-        }
-
-
+        /// <param name="line1"></param>
+        /// <returns><see cref="Line1Model"/></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static Line1Model Parse(string line1)
         {
             if (string.IsNullOrEmpty(line1))
@@ -25,7 +23,7 @@
 
             if (line1.Length > 69)
             {
-                throw new ArgumentOutOfRangeException("line0 exceeds 69 chars");
+                throw new ArgumentOutOfRangeException(nameof(line1), @"line0 exceeds 69 chars");
             }
 
             var checkSum = Convert.ToInt32(line1.Columns(69, 69));
@@ -46,20 +44,6 @@
             };
 
             return result;
-        }
-
-        public class Line1Model
-        {
-            public int Line { get; set; }
-            public double Number { get; set; }
-            public Classification Classification { get; set; }
-            public string Id { get; set; }
-            public DateTime Date { get; set; }
-            public double FirstDerivativeMeanMotion { get; set; }
-            public double SecondDerivativeMeanMotion { get; set; }
-            public double DragTermRadiationPressure { get; set; }
-            public int EphemerisType { get; set; }
-            public int ElementSetNumber { get; set; }
         }
     }
 }

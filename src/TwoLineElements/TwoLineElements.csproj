@@ -11,10 +11,16 @@
 			a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch.
 			https://wikipedia.org/wiki/Two-line_element_set
 		</Description>
-		<PackageProjectUrl>https://ponoorak.visualstudio.com/Nasa/_git/TwoLineElements</PackageProjectUrl>
+		<PackageProjectUrl>https://dev.azure.com/ponoorak/Nasa/_git/TwoLineElements</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<RepositoryUrl>https://ponoorak.visualstudio.com/Nasa/_git/TwoLineElements</RepositoryUrl>
+		<RepositoryUrl>https://dev.azure.com/ponoorak/Nasa/_git/TwoLineElements</RepositoryUrl>
 		<IsPackable>True</IsPackable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -43,4 +49,9 @@
 		</EmbeddedResource>
 	</ItemGroup>
 
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>$(AssemblyName).Tests</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
 </Project>

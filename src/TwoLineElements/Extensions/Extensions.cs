@@ -1,8 +1,8 @@
-﻿namespace TwoLineElements
+﻿namespace TwoLineElements.Extensions
 {
     using System;
 
-    public static class Extensions
+    internal static class Extensions
     {
         public static string SkipLeft(this string value, int index)
         {

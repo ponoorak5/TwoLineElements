@@ -2,6 +2,7 @@
 {
     using System;
     using Exceptions;
+    using Extensions;
     using Xunit;
 
     public class UtilsTests
