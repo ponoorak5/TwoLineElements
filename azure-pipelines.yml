@@ -24,6 +24,8 @@ parameters:
   
 variables:
 - group: nuget_org
+- name: projectName
+  value: 'TwoLineElements'
 - name: solution
   value: '**/*.sln'
 - name: buildPlatform
