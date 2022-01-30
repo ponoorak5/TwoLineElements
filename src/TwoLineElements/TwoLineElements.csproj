@@ -7,9 +7,7 @@
 		<Company>Optra</Company>
 		<Product>NasaOpenApi</Product>
 		<Description>
-			Library for parse two line lemenet set (TLE), data format for encoding 
-			a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch.
-			https://wikipedia.org/wiki/Two-line_element_set
+			Library for parse two line lemenet set (TLE), data format for encoding a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch. https://wikipedia.org/wiki/Two-line_element_set
 		</Description>
 		<PackageProjectUrl>https://dev.azure.com/ponoorak/Nasa/_git/TwoLineElements</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
