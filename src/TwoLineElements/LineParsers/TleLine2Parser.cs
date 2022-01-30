@@ -13,7 +13,7 @@
 
             if (line2.Length > 69)
             {
-                throw new ArgumentOutOfRangeException("line0 exceeds 69 chars");
+                throw new ArgumentOutOfRangeException(nameof(line2), @"line0 exceeds 69 chars");
             }
 
             var checkSum = Convert.ToInt32(line2.Substring(68, 1));

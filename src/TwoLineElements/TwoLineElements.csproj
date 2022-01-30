@@ -5,8 +5,12 @@
 		<Version>2.0.0</Version>
 		<Authors>ponoorak</Authors>
 		<Company>Optra</Company>
-		<Product>Nasa.Open.Api</Product>
-		<Description>https://ponoorak.visualstudio.com/Nasa/_git/TwoLineElements?path=/README.md</Description>
+		<Product>NasaOpenApi</Product>
+		<Description>
+			Library for parse two line lemenet set (TLE), data format for encoding 
+			a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch.
+			https://wikipedia.org/wiki/Two-line_element_set
+		</Description>
 		<PackageProjectUrl>https://ponoorak.visualstudio.com/Nasa/_git/TwoLineElements</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<RepositoryUrl>https://ponoorak.visualstudio.com/Nasa/_git/TwoLineElements</RepositoryUrl>

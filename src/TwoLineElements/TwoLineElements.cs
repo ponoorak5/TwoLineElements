@@ -9,16 +9,12 @@
 
     public class TwoLineElements
     {
-        public TwoLineElements(TwoLineElementsModel twoLineElementsModel) => TwoLineElementsModel = twoLineElementsModel;
-
-        public TwoLineElementsModel TwoLineElementsModel { get; set; }
-
         public static TwoLineElementsModel Parse(string lines)
         {
             if (string.IsNullOrWhiteSpace(lines))
             {
                 throw new ArgumentNullException(nameof(lines),
-                    "lines is null, it should contain at least 2 lines https://pl.wikipedia.org/wiki/TLE");
+                    @"lines is null, it should contain at least 2 lines https://pl.wikipedia.org/wiki/TLE");
             }
 
             var linesArray = lines.Split('\n').Where(s => !string.IsNullOrEmpty(s)).ToList();
@@ -40,7 +36,7 @@
             //TLE could be 3 lines, first than is satellite name
             if (lines.Count > Convert.ToInt32(Resources.TLE_MAX_LINE_COUNT))
             {
-                throw new ArgumentOutOfRangeException(nameof(lines), "lines has more than 3 positions");
+                throw new ArgumentOutOfRangeException(nameof(lines), @"lines has more than 3 positions");
             }
 
             var tle = new TwoLineElementsModel();

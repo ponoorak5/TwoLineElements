@@ -17,7 +17,16 @@
         public void ChecksumCheckInvalid()
         {
             var line = @"1 43554U 98067PC  20118.45620883  .00054942  00000-0  30671-3 0  9993";
-            Assert.Throws<ChecksumException>(() => Utils.Checksum(line, 5));
+            var exception = Assert.Throws<ChecksumException>(() => Utils.Checksum(line, 5));
+            Assert.Equal(5, exception.Expected);
+            Assert.Equal(3, exception.Actual);
+        }
+
+        [Fact]
+        public void ColumnOutOfRange()
+        {
+            var line = "1 3 4";
+            Assert.Throws<ArgumentOutOfRangeException>(() => line.Columns(0, 1));
         }
 
         [Fact]

@@ -1,5 +1,8 @@
 [![Build Status](https://ponoorak.visualstudio.com/Nasa/_apis/build/status/TwoLineElements?branchName=master)](https://ponoorak.visualstudio.com/Nasa/_build/latest?definitionId=23&branchName=master)
 
+Library for parse two line lemenet set (TLE), data format for encoding a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch.  
+https://wikipedia.org/wiki/Two-line_element_set
+
 # Instalation Tle parser
 
 ```

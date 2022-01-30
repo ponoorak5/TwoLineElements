@@ -15,7 +15,8 @@
         [Fact]
         public void ParamToLong()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => TleLine2Parser.Parse("1998-067PC               "));
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+                TleLine2Parser.Parse("2 25544  51.6416 247.4627 0006703 130.5360 325.0288 15.72125391563537 "));
         }
 
         [Fact]

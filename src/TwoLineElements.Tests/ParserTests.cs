@@ -43,6 +43,16 @@ namespace TwoLineElements.Tests
         }
 
         [Fact]
+        public void ParseValidStringTest4()
+        {
+            var r = TwoLineElements.Parse("NOAA 14",
+                "1 23455U 94089A   97320.90946019  .00000140  00000-0  10191-3 0  2621",
+                "2 23455  99.0090 272.6745 0008546 223.1686 136.8816 14.11711747148495");
+
+            Assert.Equal("NOAA 14", r.Name);
+        }
+
+        [Fact]
         public void ParseInvalidArray()
         {
             List<string> stringArr = null;
@@ -66,6 +76,12 @@ namespace TwoLineElements.Tests
 
             linesStr = "asd\n";
             Assert.Throws<ArgumentException>(() => TwoLineElements.Parse(linesStr));
+        }
+
+        [Fact]
+        public void ParseInvalidQueue()
+        {
+
         }
     }
 }
