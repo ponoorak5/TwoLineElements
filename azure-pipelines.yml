@@ -41,7 +41,7 @@ variables:
 - name: minor
   value: 1
 - name: build
-  value: 0
+  value: 1
 
 stages:
 - template: pipeline_nuget.yml@buildTools

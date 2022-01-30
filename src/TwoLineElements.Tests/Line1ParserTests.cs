@@ -25,7 +25,6 @@
         {
             var line = "1 25544U 98067A   08264.51782528 -.00002182  00000-0 -11606-4 0  2927";
             var result = TleLine1Parser.Parse(line);
-            result.FirstDerivativeMeanMotion
             Assert.Equal(1, result.Line);
             Assert.Equal(25544, result.Number);
             Assert.Equal(Classification.Unclassified, result.Classification);
