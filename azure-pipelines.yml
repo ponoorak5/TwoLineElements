@@ -12,10 +12,9 @@ pool:
 
 resources:
   repositories:
-  - repository: Optra2.0/buildTools
+  - repository: buildTools
     type: git
-    name: buildTools
-    endpoint: buildTools
+    name: Optra2.0/buildTools    
 
 parameters:
 - name: push_nuget
