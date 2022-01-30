@@ -27,7 +27,7 @@ variables:
 - name: tests
   value: '**/*Tests.csproj'
 - name: vstsFeed
-  value 'Nasa/Nasa_feed'
+  value: 'Nasa/Nasa_feed'
 - name: major
   value: 2
 - name: minor
