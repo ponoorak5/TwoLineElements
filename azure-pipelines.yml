@@ -46,4 +46,7 @@ variables:
 stages:
 - template: pipeline_nuget.yml@buildTools
   parameters:
+   projectName: $(projectName)
    push_nuget: ${{ parameters.push_nuget }}
+   vstsFeed: $(vstsFeed)
+   solution: $(solution)

@@ -1,7 +1,7 @@
-﻿namespace TwoLineElements.LineParsers
-{
-    using System;
+﻿using System;
 
+namespace TwoLineElements.LineParsers
+{
     /// <summary>
     ///     Parse first 1 (or 0) line contains name
     ///     char [24]

@@ -1,12 +1,12 @@
-﻿namespace TwoLineElements
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using LineParsers;
-    using Models;
-    using Properties;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using TwoLineElements.LineParsers;
+using TwoLineElements.Models;
+using TwoLineElements.Properties;
 
+namespace TwoLineElements
+{
     public static class TwoLineElements
     {
         public static TwoLineElementsModel Parse(string lines)

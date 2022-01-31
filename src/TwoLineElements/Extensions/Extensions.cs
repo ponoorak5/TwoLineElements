@@ -1,7 +1,7 @@
-﻿namespace TwoLineElements.Extensions
-{
-    using System;
+﻿using System;
 
+namespace TwoLineElements.Extensions
+{
     internal static class Extensions
     {
         public static string SkipLeft(this string value, int index)
@@ -9,9 +9,9 @@
             return value.Substring(index, value.Length - index);
         }
 
-        public static string FromRight(this string value, int index)
+        public static ReadOnlySpan<char> FromRight(this ReadOnlySpan<char> value, int index)
         {
-            return value.Substring(value.Length - index, index);
+            return value.Slice(value.Length - index, index);
         }
 
         /// <summary>
@@ -29,6 +29,16 @@
             }
 
             return value.Substring(from - 1, to - from + 1);
+        }
+
+        public static ReadOnlySpan<char> Columns(this ReadOnlySpan<char> value, int from, int to)
+        {
+            if (from < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(from));
+            }
+
+            return value.Slice(from - 1, to - from + 1);
         }
     }
 }
