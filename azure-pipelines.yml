@@ -24,18 +24,6 @@ parameters:
   
 variables:
 - group: nuget_org
-- name: projectName
-  value: 'TwoLineElements'
-- name: solution
-  value: '**/*.sln'
-- name: buildPlatform
-  value: 'Any CPU'
-- name: buildConfiguration
-  value: 'Release'
-- name: tests
-  value: '**/*Tests.csproj'
-- name: vstsFeed
-  value: 'Nasa/Nasa_feed'
 - name: major
   value: 2
 - name: minor
@@ -46,7 +34,6 @@ variables:
 stages:
 - template: pipeline_nuget.yml@buildTools
   parameters:
-   projectName: $(projectName)
+   projectName: 'TwoLineElements'
    push_nuget: ${{ parameters.push_nuget }}
-   vstsFeed: $(vstsFeed)
-   solution: $(solution)
+   vstsFeed: 'Nasa/Nasa_feed'
