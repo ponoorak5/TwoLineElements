@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace TwoLineElements.Exceptions
+﻿namespace TwoLineElements.Exceptions
 {
+    using System;
+
 #pragma warning disable RCS1194 // Implement exception constructors.
     public class ChecksumException : Exception
 #pragma warning restore RCS1194 // Implement exception constructors.

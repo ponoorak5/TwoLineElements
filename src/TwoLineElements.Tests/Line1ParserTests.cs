@@ -1,6 +1,5 @@
 ﻿namespace TwoLineElements.Tests
 {
-
     using System;
     using LineParsers;
     using Models;
@@ -29,7 +28,7 @@
             Assert.Equal(1, result.Line);
             Assert.Equal(25544, result.Number);
             Assert.Equal(Classification.Unclassified, result.Classification);
-            Assert.Equal(DateTime.Parse("2008-09-20T12:25:40.1041920Z").ToUniversalTime() , result.Date);
+            Assert.Equal(DateTime.Parse("2008-09-20T12:25:40.1041920Z").ToUniversalTime(), result.Date);
             Assert.Equal(-2.182E-05, result.FirstDerivativeMeanMotion);
             Assert.Equal(0, result.SecondDerivativeMeanMotion);
             Assert.Equal(-0.11606E-4, result.DragTermRadiationPressure);

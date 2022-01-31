@@ -1,4 +1,4 @@
-[![Build Status](https://ponoorak.visualstudio.com/Nasa/_apis/build/status/TwoLineElements?branchName=master)](https://ponoorak.visualstudio.com/Nasa/_build/latest?definitionId=23&branchName=master)
+[![Build Status](https://dev.azure.com/ponoorak/Nasa/_apis/build/status/TwoLineElements?repoName=TwoLineElements&branchName=master)](https://dev.azure.com/ponoorak/Nasa/_build/latest?definitionId=23&repoName=TwoLineElements&branchName=master)
 
 Library for parse two line lemenet set (TLE), data format for encoding a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch.  
 https://wikipedia.org/wiki/Two-line_element_set
@@ -16,7 +16,7 @@ var lines = "STARLINK-24\n" +
                        	"1 44238U 19029D   20182.10581531  .00001387  00000-0  94194-4 0  9999\n" +
                         "2 44238  52.9975 151.8469 0000937  68.7807 291.3284 15.13099176 60950";
 
-TwoLineElementsModel result = TwoLineElements.Parse(lines);
+TwoLineElementsModel result = Tle.Parse(lines);
 ```
 Or
 ```

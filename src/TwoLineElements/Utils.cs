@@ -1,11 +1,11 @@
-﻿using System;
-using System.Globalization;
-using System.Text.RegularExpressions;
-using TwoLineElements.Exceptions;
-using TwoLineElements.Extensions;
-
-namespace TwoLineElements
+﻿namespace TwoLineElements
 {
+    using System;
+    using System.Globalization;
+    using System.Text.RegularExpressions;
+    using Exceptions;
+    using Extensions;
+
     internal static class Utils
     {
         /// <summary>
@@ -34,13 +34,12 @@ namespace TwoLineElements
                 }
                 else if (char.IsDigit(c))
                 {
-                    sum += (byte)char.GetNumericValue(c);
+                    sum += (byte) char.GetNumericValue(c);
                 }
             }
 
             return sum % 10;
         }
-
 
         public static int ParseIntValue(ReadOnlySpan<char> value)
         {
@@ -79,19 +78,18 @@ namespace TwoLineElements
             var century = year - currentEpoch;
             year = epoch > currentEpoch + 1 ? century - 100 + epoch : century + epoch;
 
-            var day = (int)Math.Floor(days);
+            var day = (int) Math.Floor(days);
             var hours = 24 * (days - day);
-            var hour = (int)Math.Floor(hours);
+            var hour = (int) Math.Floor(hours);
             var minutes = 60 * (hours - hour);
-            var minute = (int)Math.Floor(minutes);
+            var minute = (int) Math.Floor(minutes);
             var seconds = 60 * (minutes - minute);
-            var second = (int)Math.Floor(seconds);
+            var second = (int) Math.Floor(seconds);
             var millSeconds = 1000 * (seconds - second);
 
             var date = new DateTime(year, 1, 1, hour, minute, second) + TimeSpan.FromDays(day) +
                        TimeSpan.FromMilliseconds(millSeconds);
             return DateTime.SpecifyKind(date.AddDays(-1), DateTimeKind.Utc);
         }
-
     }
 }

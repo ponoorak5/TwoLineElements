@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace TwoLineElements.LineParsers
+﻿namespace TwoLineElements.LineParsers
 {
+    using System;
+
     /// <summary>
     ///     Parse first 1 (or 0) line contains name
     ///     char [24]
@@ -9,7 +9,7 @@ namespace TwoLineElements.LineParsers
     public static class TleLine0Parser
     {
         /// <summary>
-        ///     Parse line 0 TLE
+        ///     Parse line 0 Tle
         /// </summary>
         /// <param name="line0">line length less than 24</param>
         /// <returns>Satellite name</returns>

@@ -1,6 +1,5 @@
 ﻿namespace TwoLineElements.Tests
 {
-
     using System;
     using LineParsers;
     using Xunit;
