@@ -1,13 +1,13 @@
-﻿using System;
-using TwoLineElements.Extensions;
-using TwoLineElements.Models;
-
-namespace TwoLineElements.LineParsers
+﻿namespace TwoLineElements.LineParsers
 {
+    using System;
+    using Extensions;
+    using Models;
+
     public static class TleLine2Parser
     {
         /// <summary>
-        ///     Parse second line of TLE
+        ///     Parse second line of Tle
         /// </summary>
         /// <param name="line2"></param>
         /// <returns>

@@ -1,6 +1,5 @@
 ﻿namespace TwoLineElements.Tests
 {
-
     using System;
     using Exceptions;
     using Extensions;
@@ -22,13 +21,6 @@
             var exception = Assert.Throws<ChecksumException>(() => Utils.Checksum(line, 5));
             Assert.Equal(5, exception.Expected);
             Assert.Equal(3, exception.Actual);
-        }
-
-        [Fact]
-        public void Column_OutOfRange_Exception()
-        {
-            var line = "1 3 4";
-            Assert.Throws<ArgumentOutOfRangeException>(() => line.Columns(0, 1));
         }
 
         [Fact]

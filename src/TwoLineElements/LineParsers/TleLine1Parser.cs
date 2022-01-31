@@ -1,14 +1,14 @@
-﻿using System;
-using System.Linq;
-using TwoLineElements.Extensions;
-using TwoLineElements.Models;
-
-namespace TwoLineElements.LineParsers
+﻿namespace TwoLineElements.LineParsers
 {
+    using System;
+    using System.Linq;
+    using Extensions;
+    using Models;
+
     public static class TleLine1Parser
     {
         /// <summary>
-        ///     Parse first line TLE
+        ///     Parse first line Tle
         /// </summary>
         /// <param name="line1"></param>
         /// <returns>
@@ -18,7 +18,7 @@ namespace TwoLineElements.LineParsers
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static Line1Model Parse(ReadOnlySpan<char> line1)
         {
-            if (line1 == null || line1.Length < 1)
+            if (line1 == null || line1.IsEmpty)
             {
                 throw new ArgumentNullException(nameof(line1), @"line1 can't be empty");
             }
@@ -34,7 +34,7 @@ namespace TwoLineElements.LineParsers
             {
                 Line = Utils.ParseIntValue(line1.Columns(1, 1)),
                 Number = Utils.ParseDoubleValue(line1.Columns(3, 7)),
-                Classification = (Classification)line1.Columns(8, 8).ToArray().First(),
+                Classification = (Classification) line1.Columns(8, 8).ToArray().First(),
                 Id = line1.Columns(10, 17).ToString().Trim(),
                 Date = Utils.JulianToDateTimeUtc(line1.Columns(19, 32)),
                 FirstDerivativeMeanMotion = Utils.ParseDoubleValue(line1.Columns(34, 43)),

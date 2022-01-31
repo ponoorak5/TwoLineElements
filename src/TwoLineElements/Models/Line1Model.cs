@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace TwoLineElements.Models
+﻿namespace TwoLineElements.Models
 {
+    using System;
+
     public class Line1Model
     {
         /// <summary>
@@ -70,12 +70,12 @@ namespace TwoLineElements.Models
         public double DragTermRadiationPressure { get; set; }
 
         /// <summary>
-        ///     Ephemeris type (always zero; only used in undistributed TLE data)
+        ///     Ephemeris type (always zero; only used in undistributed Tle data)
         /// </summary>
         public int EphemerisType { get; set; }
 
         /// <summary>
-        ///     Element set number. Incremented when a new TLE is generated for this object.
+        ///     Element set number. Incremented when a new Tle is generated for this object.
         /// </summary>
         public int ElementSetNumber { get; set; }
     }

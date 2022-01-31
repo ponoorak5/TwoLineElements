@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using TwoLineElements.LineParsers;
-using TwoLineElements.Models;
-using TwoLineElements.Properties;
-
-namespace TwoLineElements
+﻿namespace TwoLineElements
 {
-    public static class TwoLineElements
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using LineParsers;
+    using Models;
+    using Properties;
+
+    public static class Tle
     {
         public static TwoLineElementsModel Parse(string lines)
         {
             if (string.IsNullOrWhiteSpace(lines))
             {
                 throw new ArgumentNullException(nameof(lines),
-                    @"lines is null, it should contain at least 2 lines https://pl.wikipedia.org/wiki/TLE");
+                    @"lines is null, it should contain at least 2 lines https://pl.wikipedia.org/wiki/Tle");
             }
 
             var linesArray = lines.Split('\n').Where(s => !string.IsNullOrEmpty(s)).ToList();
@@ -33,7 +33,7 @@ namespace TwoLineElements
                 throw new ArgumentException("Lines count is to low");
             }
 
-            //TLE could be 3 lines, first than is satellite name
+            //Tle could be 3 lines, first than is satellite name
             if (lines.Count > Convert.ToInt32(Resources.TLE_MAX_LINE_COUNT))
             {
                 throw new ArgumentOutOfRangeException(nameof(lines), @"lines has more than 3 positions");

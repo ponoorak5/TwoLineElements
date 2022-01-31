@@ -1,7 +1,7 @@
-﻿using TwoLineElements.LineParsers;
-
-namespace TwoLineElements.Models
+﻿namespace TwoLineElements.Models
 {
+    using LineParsers;
+
     public class TwoLineElementsModel
     {
         /// <summary>
