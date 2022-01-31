@@ -1,7 +1,7 @@
-﻿namespace TwoLineElements.Models
-{
-    using System;
+﻿using System;
 
+namespace TwoLineElements.Models
+{
     public class Line1Model
     {
         /// <summary>

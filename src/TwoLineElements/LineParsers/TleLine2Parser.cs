@@ -1,9 +1,9 @@
-﻿namespace TwoLineElements.LineParsers
-{
-    using System;
-    using Extensions;
-    using Models;
+﻿using System;
+using TwoLineElements.Extensions;
+using TwoLineElements.Models;
 
+namespace TwoLineElements.LineParsers
+{
     public static class TleLine2Parser
     {
         /// <summary>
@@ -15,9 +15,9 @@
         /// </returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public static Line2Model Parse(string line2)
+        public static Line2Model Parse(ReadOnlySpan<char> line2)
         {
-            if (string.IsNullOrEmpty(line2))
+            if (line2 == null || line2.Length < 1)
             {
                 throw new ArgumentNullException(nameof(line2), @"line1 can't be empty");
             }
@@ -27,20 +27,20 @@
                 throw new ArgumentOutOfRangeException(nameof(line2), @"line0 exceeds 69 chars");
             }
 
-            var checkSum = Convert.ToInt32(line2.Substring(68, 1));
+            var checkSum = Convert.ToInt32(line2.Slice(68, 1).ToString());
             Utils.Checksum(line2, checkSum);
 
             var result = new Line2Model
             {
-                Line = Utils.ParseIntValue(line2.Columns(1, 1).Trim()),
-                Number = Utils.ParseDoubleValue(line2.Columns(3, 7).Trim()),
-                Inclination = Utils.ParseDoubleValue(line2.Columns(9, 16).Trim()),
-                Ascension = Utils.ParseDoubleValue(line2.Columns(18, 25).Trim()),
-                Eccentricity = Utils.ParseDoubleValue(line2.Columns(27, 33).Trim()),
-                Perigee = Utils.ParseDoubleValue(line2.Columns(35, 42).Trim()),
-                Anomaly = Utils.ParseDoubleValue(line2.Columns(44, 51).Trim()),
-                Motion = Utils.ParseDoubleValue(line2.Columns(53, 63).Trim()),
-                Revolution = Utils.ParseDoubleValue(line2.Columns(64, 68).Trim())
+                Line = Utils.ParseIntValue(line2.Columns(1, 1)),
+                Number = Utils.ParseDoubleValue(line2.Columns(3, 7)),
+                Inclination = Utils.ParseDoubleValue(line2.Columns(9, 16)),
+                Ascension = Utils.ParseDoubleValue(line2.Columns(18, 25)),
+                Eccentricity = Utils.ParseDoubleValue(line2.Columns(27, 33)),
+                Perigee = Utils.ParseDoubleValue(line2.Columns(35, 42)),
+                Anomaly = Utils.ParseDoubleValue(line2.Columns(44, 51)),
+                Motion = Utils.ParseDoubleValue(line2.Columns(53, 63)),
+                Revolution = Utils.ParseDoubleValue(line2.Columns(64, 68))
             };
 
             return result;
