@@ -17,23 +17,26 @@ resources:
     name: Optra2.0/buildTools    
 
 parameters:
-- name: push_nuget
+- name: pushNugetOrg
   displayName: Push to nuget.org
   type: boolean
   default: false
   
-variables:
-- group: nuget_org
-- name: major
-  value: 2
-- name: minor
-  value: 2
-- name: build
-  value: 0
+- name: isOfficial
+  displayName: Official build
+  type: boolean
+  default: false
+  
+- name: buildVersion
+  displayName: Official build
+  type: string
+  default: '2.2.0'
 
 stages:
 - template: pipeline_nuget.yml@buildTools
   parameters:
    projectName: 'TwoLineElements'
-   push_nuget: ${{ parameters.push_nuget }}
+   pushNugetOrg: ${{ parameters.pushNugetOrg }}
+   isOfficial: ${{ parameters.isOfficial }}
+   buildVersion: ${{ parameters.buildVersion }}
    vstsFeed: 'Nasa/Nasa_feed'
