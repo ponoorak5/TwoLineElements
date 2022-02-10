@@ -30,7 +30,7 @@ parameters:
 - name: buildVersion
   displayName: Official build
   type: string
-  default: '2.2.0'
+  default: '2.2.1'
 
 stages:
 - template: pipeline_nuget.yml@buildTools
