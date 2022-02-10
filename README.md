@@ -18,9 +18,6 @@ Install-Package TwoLineElements
 ```sh
 dotnet add package TwoLineElements
 ```
-
-Use the `--version` option to specify a [preview version](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/absoluteLatest) to install.
-
 ### Ussage Tle parser
 
 ```
