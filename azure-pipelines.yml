@@ -18,25 +18,19 @@ resources:
 
 parameters:
 - name: pushNugetOrg
-  displayName: Push to nuget.org
-  type: boolean
-  default: false
-  
-- name: isOfficial
-  displayName: Official build
+  displayName: push to nuget.org
   type: boolean
   default: false
   
 - name: buildVersion
-  displayName: Official build
+  displayName: build version
   type: string
-  default: '2.2.0'
+  default: '2.2.1'
 
 stages:
 - template: pipeline_nuget.yml@buildTools
   parameters:
    projectName: 'TwoLineElements'
    pushNugetOrg: ${{ parameters.pushNugetOrg }}
-   isOfficial: ${{ parameters.isOfficial }}
    buildVersion: ${{ parameters.buildVersion }}
    vstsFeed: 'Nasa/Nasa_feed'
