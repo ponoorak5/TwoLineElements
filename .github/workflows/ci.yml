@@ -1,15 +1,32 @@
+name: "Build and test"
+
 on:
   push:
-    branches:
-    - main
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  SOLUTION_PATH: 'src/TwoLineElements.sln'    
+
 jobs:
   build:
+    name: 'build'  
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
-    - name: Checkout
+    - name: 'Checkout'
       uses: actions/checkout@v2
-    - name: Build
-      run: dotnet build src/TwoLineElements.sln --configuration Release
-    - name: Test
-      run: dotnet test build src/TwoLineElements.sln --configuration Release --no-build
+
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0'
+
+    - name: 'Install dependencies'
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+
+    - name: 'Build solution'
+      run: dotnet build ${{ env.SOLUTION_PATH }} --configuration Release --no-restore
+
+    - name: 'Test solution'
+      run: dotnet test ${{ env.SOLUTION_PATH }} --no-restore --no-build --verbosity normal
