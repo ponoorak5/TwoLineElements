@@ -1,4 +1,4 @@
-name: "Deploy MarkLogicNet to NuGet"
+name: "Deploy TLE to NuGet"
 
 on:
   push:
