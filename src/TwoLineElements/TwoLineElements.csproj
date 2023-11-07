@@ -6,10 +6,11 @@
 		<Company>Optra</Company>
 		<Product>NasaOpenApi</Product>
 		<Description>
-			"A library for parsing two-line element sets (TLE), which is a data format encoding a list of orbital elements for an Earth-orbiting object at a specific point in time known as the epoch. You can find more information about this format on the Wikipedia page: https://wikipedia.org/wiki/Two-line_element_set.
+			Library for parsing two-line element sets (TLE), which is a data format encoding a list of orbital elements for an Earth-orbiting object at a specific point in time known as the epoch. You can find more information about this format on the Wikipedia page: https://wikipedia.org/wiki/Two-line_element_set.
 		</Description>
 		<PackageProjectUrl>https://github.com/ponoorak5/TwoLineElements</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/ponoorak5/TwoLineElements</RepositoryUrl>
 		<IsPackable>True</IsPackable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
