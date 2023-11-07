@@ -6,13 +6,13 @@ on:
     - 'v*'
 
 env:
-  PROJECT_PATH: 'src/TwoLineElements.csproj'
+  PROJECT_PATH: 'src/TwoLineElements/TwoLineElements.csproj'
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
   NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
 
 jobs:
   deploy:
-    name: 'Deploy'
+    name: 'Deploy TwoLineElements'
     runs-on: 'windows-latest'
     steps:
     - name: 'Checkout'
