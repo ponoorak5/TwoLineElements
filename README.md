@@ -1,6 +1,5 @@
 ## Repository
-Library for parse two line lemenet set (TLE), data format for encoding a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch.  
-https://wikipedia.org/wiki/Two-line_element_set
+Library for parsing two-line element sets (TLE), a data format used to encode a list of orbital elements for an Earth-orbiting object at a specific point in time known as the epoch.https://wikipedia.org/wiki/Two-line_element_set
 
 ## Repo 
 https://github.com/ponoorak5/TwoLineElements
