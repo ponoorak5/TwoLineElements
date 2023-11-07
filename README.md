@@ -1,9 +1,4 @@
-# Repository
-
-![Azure DevOps builds](https://img.shields.io/azure-devops/build/ponoorak/Nasa/23?label=Azure%20Pipelines)
-![Azure DevOps tests](https://img.shields.io/azure-devops/tests/ponoorak/Nasa/23/master?compact_message)
-
-
+w# Repository
 Library for parse two line lemenet set (TLE), data format for encoding a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch.  
 https://wikipedia.org/wiki/Two-line_element_set
 

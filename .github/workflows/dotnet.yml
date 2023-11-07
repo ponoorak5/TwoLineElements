@@ -1,18 +1,19 @@
-name: "Build and test"
+name: "Deploy MarkLogicNet to NuGet"
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    tags:
+    - 'v*'
 
 env:
-  SOLUTION_PATH: 'src/TwoLineElements.sln'    
+  PROJECT_PATH: 'src/TwoLineElements.csproj'
+  PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
+  NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
 
 jobs:
-  build:
-    name: 'build'  
-    runs-on: ubuntu-latest
+  deploy:
+    name: 'Deploy'
+    runs-on: 'windows-latest'
     steps:
     - name: 'Checkout'
       uses: actions/checkout@v2
@@ -20,13 +21,20 @@ jobs:
     - name: 'Install dotnet'
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0'
+        dotnet-version: '3.1.x'
 
-    - name: 'Install dependencies'
-      run: dotnet restore ${{ env.SOLUTION_PATH }}
+    - name: 'Restore packages'
+      run: dotnet restore ${{ env.PROJECT_PATH }}
 
-    - name: 'Build solution'
-      run: dotnet build ${{ env.SOLUTION_PATH }} --configuration Release --no-restore
+    - name: 'Build project'
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
 
-    - name: 'Test solution'
-      run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release --no-restore --no-build --verbosity normal
+    - name: 'Get Version'
+      id: version
+      uses: battila7/get-version-action@v2
+
+    - name: 'Pack project'
+      run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols -p:SymbolPackageFormat=snupkg -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+
+    - name: 'Push package'
+      run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL }}

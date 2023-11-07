@@ -2,12 +2,11 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
-		<Version>2.0.0</Version>
 		<Authors>ponoorak</Authors>
 		<Company>Optra</Company>
 		<Product>NasaOpenApi</Product>
 		<Description>
-			Library for parse two line lemenet set (TLE), data format for encoding a list of orbital elements of an Earth-orbiting object for a given point in time, the epoch. https://wikipedia.org/wiki/Two-line_element_set
+			"A library for parsing two-line element sets (TLE), which is a data format encoding a list of orbital elements for an Earth-orbiting object at a specific point in time known as the epoch. You can find more information about this format on the Wikipedia page: https://wikipedia.org/wiki/Two-line_element_set.
 		</Description>
 		<PackageProjectUrl>https://github.com/ponoorak5/TwoLineElements</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
